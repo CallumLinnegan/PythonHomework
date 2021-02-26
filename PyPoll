@@ -1,0 +1,4 @@
+Import Pandas as pd 
+
+file = "PyPollData.csv"
+df = pd.read_csv(file)
