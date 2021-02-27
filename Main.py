@@ -23,7 +23,7 @@ total_months = len(df["Date"])
 
 #Sum Second Column
 Net_Total = df["Profit/Losses"].sum()
-print("Total: $" + str(Net_Total))
+
 
 
 #Store column 2 in dummy data frame
@@ -52,9 +52,19 @@ MinDate = df.iloc[Min_index,0]
 
 print("Financial Analysis")
 print("-------------------------")
+print("Total: $" + str(Net_Total))
 print("Total Months: " + str(total_months))
 print("Average Change: $" + str(Average_Change))
 print("Greatest Increase in Profits: " + str(MaxDate) + " ($" + str(Max_Value) + ")")
 print("Greatest Decrease in Profits: " + str(MinDate) + " ($" + str(Min_Value) + ")")
 
+text_file = open("Pybank.txt","w")
+text_file.write("Financial Analysis\n")
+text_file.write("-------------------------\n")
+text_file.write("Total: $" + str(Net_Total) + "\n")
+text_file.write("Total Months: " + str(total_months) + "\n")
+text_file.write("Average Change: $" + str(Average_Change) + "\n")
+text_file.write("Greatest Increase in Profits: " + str(MaxDate) + " ($" + str(Max_Value) + ")\n")
+text_file.write("Greatest Decrease in Profits: " + str(MinDate) + " ($" + str(Min_Value) + ")\n")
+text_file.close()
 
